@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sambit 👍</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: #000;
+    }
+
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 110%; /* Slightly larger for smoother edge movement */
+      height: 110%;
+      background-image: url("https://www.dropbox.com/scl/fi/xmja9rqztz8gwk6jjux4i/Studio_20231231_193239-removebg-preview.png?rlkey=k3lvqwg38tiqvjrmzb58lf3ba&st=pcjuabpk&raw=1");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translate(-5%, -5%) scale(1.1);
+      transition: transform 0.1s ease-out;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3em;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <h1>Sambit 👍</h1>
+
+  <script>
+    const bg = document.querySelector('.bg');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 10; // move range
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      bg.style.transform = `translate(${x * -1}%, ${y * -1}%) scale(1.1)`;
+    });
+  </script>
+</body>
+</html>
